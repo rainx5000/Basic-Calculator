@@ -1,0 +1,195 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* -------------------------------------------------------------------------------------------------- */
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+html {
+    width: 100%;
+}
+.container {
+    width: 125vh;
+    height: 80vh;
+    background-color: rgb(56, 55, 55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2%;
+}
+.display {
+    height: 20vh;
+    width: 120vh;
+    background-color:  rgb(112, 112, 112);
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10%;
+}
+
+.result {
+    font-size: 8vh;
+    padding-right: 3vh;
+    color: white;
+    align-self: center;
+}
+
+.controls {
+    height: 50vh;
+    width: 120vh;
+    margin-top: 2vh;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.controls > button {
+    width: 18%;
+    height: 9vh;
+    font-size: 4.5vh;
+    font-weight: 700;
+    border-radius: 20%;
+    color: white;
+    outline: none;
+}
+
+.controls > button:hover {
+    cursor: pointer;
+}
+
+.highlightButton {
+    background-color: rgb(20, 124, 20);
+}
+
+#zero {
+    width: 38.5%;
+    background-color:#242424;
+}
+
+#clear {
+    background-color: #ff577f;
+}
+
+#clear:hover {
+    background-color: rgb(201, 75, 102);
+}
+.controls .column4 {
+    height: 10vh;
+    background-color:#ffc764;
+    box-sizing: border-box;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 0;
+    
+}
+
+.controls .column4:hover {
+    background-color:#ffbe4f;
+}
+
+.controls > .number, .controls > .column5  {
+    background-color: rgb(59, 59, 59);
+    
+}
+
+.controls > .column5 {
+    height: 10vh;
+    border-radius: 0;
+    border-left: 1px solid rgb(184, 182, 182);
+    border-right: 1px solid rgb(184, 182, 182);
+
+}
+
+.controls > .number:hover, .controls > .column5:hover  {
+    background-color: rgb(43, 43, 43);
+}
+
+#decimal, #togglePosNeg, #percent{
+    background-color: #74c7b8;
+}
+
+#decimal:hover, #togglePosNeg:hover, #percent:hover{
+    background-color: #62afa1;
+}
+
+#ignore {
+    pointer-events: none;
+}
+
+
+
+
+
+ 
+    
