@@ -44,9 +44,13 @@ buttons.forEach(button => {
         } else if (e.target.id === 'exponent') {
             calc('exponent');
         } else if (e.target.id === 'equal') {
+
             if (operator !== 'equal' && operator !== undefined) {
                 z = equal();
                 numbersArray = [];
+                if (Number.isNaN(z)) {
+                    z = 'undefined';
+                }
             }
             toggle = true;
             if (filter !== '.') {
@@ -54,7 +58,7 @@ buttons.forEach(button => {
                 filter = '.'
             }
         } else if (e.target.id === 'pi') {
-            if (z === '') {
+            if (numbersArray.length <= 0) {
                 if (filter !== '.') {
                     numbers(e.target.value)
                     filter = '.';
@@ -109,10 +113,13 @@ function findResult() {
         numbersArray.push(Number(z));
         return numbersArray.reduce((x, y) => x - y);
     } else if (operator === 'multiplication') {
+        console.log('solves')
         numbersArray.push(Number(z));
         return numbersArray.reduce((x, y) => x * y);
     } else if (operator === 'division') {
+
         numbersArray.push(Number(z));
+        console.log('afterhere?')
         return numbersArray.reduce((x, y) => x / y);
     } else if (operator === 'percent') {
         let num = Number(z);
@@ -144,19 +151,19 @@ function findResult() {
     } else if (operator === 'exponent') {
         numbersArray.push(Number(z));
         return numbersArray.reduce((x, y) => Math.pow(x, y));
-    } else if (operator === 'equal') {
-        return z;
     }
 }
 
-let excludedToggle = ['addition', 'subtraction', 'multiplication', 'division', 'percent', 'togglePosNeg'];
+let excludedToggle = ['addition', 'subtraction', 'multiplication', 'division', 'percent', 'togglePosNeg', 'pi'];
 let excludedUpdate = ['togglePosNeg', 'sqrt', 'squared', 'cubed', 'exponent'];
 function calc(name) { //function that solves for most of our buttons
     if (z !== '') {
+
         if (operator !== name && operator !== undefined) {
             z = equal();
             numbersArray = [];
         }
+
         if (!excludedToggle.includes(name)) {
             toggle = true;
         }
@@ -178,4 +185,3 @@ function update() { //updates z and filter
     z = ''
     filter = '';
 }
-
